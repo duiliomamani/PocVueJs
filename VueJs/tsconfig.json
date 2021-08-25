@@ -1,0 +1,19 @@
+﻿{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "inlineSourceMap": false,
+    "removeComments": false,
+    "target": "es5",
+    "outDir": "wwwroot/scripts",
+    "lib": [ "es6", "es2015", "es2015.promise", "dom", "scripthost" ]
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ],
+  "include": [ "Features/**/*" ],
+  "compileOnSave": true
+
+}

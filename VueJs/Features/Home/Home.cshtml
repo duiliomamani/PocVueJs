@@ -1,0 +1,24 @@
+﻿
+@await Html.PartialAsync("~/Features/Home/Header/_Header.cshtml")
+
+@await Html.PartialAsync("~/Features/Home/Dashboard/_Dashboard.cshtml")
+
+@*@await Html.PartialAsync("~/Features/Home/Footer/_Footer.cshtml")*@
+
+@section scripts{
+    @if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
+    {
+        <script type="text/javascript" src="~/scripts/Home/Config/HomeConfig.js" asp-append-version="true"></script>
+        <script type="text/javascript" src="~/scripts/Home/HomeApiHelper.js" asp-append-version="true"></script>
+
+        <script type="text/javascript" src="~/scripts/Home/Header/HeaderController.js" asp-append-version="true"></script>
+        <script type="text/javascript" src="~/scripts/Home/Dashboard/DashboardController.js" asp-append-version="true"></script>
+        @*<script type="text/javascript" src="~/scripts/Home/Footer/FooterController.js" asp-append-version="true"></script>*@
+    }
+
+    <script>
+        Common.Controller.initializeChild(new Vue(new VueJs.Home.HeaderController));
+        Common.Controller.initializeChild(new Vue(new VueJs.Home.DashboardController));
+        //Common.Controller.initializeChild(new Vue(new VueJs.Home.FooterController));
+    </script>
+}
